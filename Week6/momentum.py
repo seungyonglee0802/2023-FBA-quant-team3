@@ -8,11 +8,12 @@ def cross_sectional_momentum(df, window_size=252, quantile=0.1):
     long_short = returns.copy()
 
     for date, row in momentum.iterrows():
+
         # Get top and bottom quantile index of momentum
-        top_quantile = row.nlargest(int(len(row) * quantile)).index
-        # half quantile for long short
-        top_half_quantile = row.nlargest(int(len(row) * quantile / 2)).index
-        bottom_half_quantile = row.nsmallest(int(len(row) * quantile / 2)).index
+        n = int(len(row) * quantile)
+        top_quantile = row.nlargest(n).index if sum(~row.isna()) >= n else []
+        top_half_quantile = row.nlargest(n//2).index if sum(~row.isna()) >= n else []
+        bottom_half_quantile = row.nsmallest(n//2).index if sum(~row.isna()) >= n else []
 
         long_only.loc[date, :] = np.where(long_only.columns.isin(top_quantile), returns.loc[date, :], 0)
         long_short.loc[date, :] = np.where(long_short.columns.isin(top_half_quantile), returns.loc[date, :], 0)
@@ -29,6 +30,7 @@ def time_series_momentum(df, window_size=252):
 
     for date, row in rolling_mean.iterrows():
         long_only.loc[date, :] = np.where(row > 0, returns.loc[date, :], 0)
-        long_short.loc[date, :] = np.where(row > 0, returns.loc[date, :], -returns.loc[date, :])
+        long_short.loc[date, :] = np.where(row > 0, returns.loc[date, :], 0)
+        long_short.loc[date, :] = np.where(row < 0, -returns.loc[date, :], long_short.loc[date, :])
 
     return long_only, long_short
