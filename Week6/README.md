@@ -48,7 +48,7 @@ Evaluates a stock's performance based on its own past returns over a certain loo
 Takes a long position when the historical price trend is positive (e.g., when the moving average of past returns is positive) and a short position when the historical price trend is negative.
 Aims to profit from the continuation of a stock's own price trend.
 
-## Figures
+## Figures (OutDated)
 
 The repository generates four figures to visualize the performance of each strategy:
 

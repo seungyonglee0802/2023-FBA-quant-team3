@@ -1,7 +1,7 @@
 import numpy as np
 
 def cross_sectional_momentum(df, window_size=252, quantile=0.1):
-    returns = df.pct_change()
+    returns = df.pct_change().shift(-1)
     momentum = df.apply(lambda x: x / x.shift(window_size) - 1)
 
     long_only = returns.copy()
@@ -24,6 +24,7 @@ def cross_sectional_momentum(df, window_size=252, quantile=0.1):
 def time_series_momentum(df, window_size=252):
     returns = df.pct_change()
     rolling_mean = returns.rolling(window=window_size).mean()
+    returns = returns.shift(-1)
 
     long_only = returns.copy()
     long_short = returns.copy()
