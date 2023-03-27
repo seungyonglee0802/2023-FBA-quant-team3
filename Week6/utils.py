@@ -26,22 +26,25 @@ def json_to_df(file_path):
     return df
 
 def performance_metrics(returns, risk_free_rate=0.02):
-    # Calculate the Compound Annual Growth Rate (CAGR)
-    CAGR = ((1 + returns.mean())**252 - 1)
-    # Calculate the annualized volatility (standard deviation)
-    volatility = returns.std() * np.sqrt(252)
-    # Calculate the Sharpe Ratio, which is the risk-adjusted return
+    portfolio_returns = returns.mean(axis=1, skipna=True)
+    cumulative_returns = (1 + portfolio_returns).cumprod()
+    total_return = cumulative_returns.iloc[-2]
+    n = cumulative_returns.count()
+    CAGR = (total_return ** (252 / n)) - 1
+    volatility = portfolio_returns.std() * np.sqrt(252)
     sharpe_ratio = (CAGR - risk_free_rate) / volatility
     return CAGR, volatility, sharpe_ratio
 
 def get_drawdown(returns):
-    cumulative_returns = (1 + returns).cumprod()
+    portfolio_returns = returns.mean(axis=1, skipna=True)
+    cumulative_returns = (1 + portfolio_returns).cumprod()
     peak = cumulative_returns.cummax()
     drawdown = (cumulative_returns - peak) / peak
     return drawdown
 
 def plot_cumulative_return_and_drawdown(returns, title, **kwargs):
-    cumulative_returns = (1 + returns).cumprod()
+    portfolio_returns = returns.mean(axis=1, skipna=True)
+    cumulative_returns = (1 + portfolio_returns).cumprod()
     drawdown = get_drawdown(returns)
 
     fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(10, 8), gridspec_kw={'height_ratios': [8, 2]})
@@ -54,7 +57,7 @@ def plot_cumulative_return_and_drawdown(returns, title, **kwargs):
 
     ax2.plot(drawdown, label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}')
     ax2.set(xlabel='Date', ylabel='Drawdown')
-    ax2.set_ylim((-0.1, 0))
+    ax2.set_ylim((-1, 0))
     ax2.legend()
 
     plt.show()
