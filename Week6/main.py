@@ -12,7 +12,7 @@ def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1):
     long_only, long_short = cross_sectional_momentum(df, window_size=window_size, quantile=quantile)
 
     # Calculate performance metrics for Long-Only portfolio
-    CAGR, volatility, sharpe_ratio = performance_metrics(long_only.mean(axis=1))
+    CAGR, volatility, sharpe_ratio = performance_metrics(long_only)
     print(f"Cross-Sectional Long-Only:\nCAGR: {CAGR:.2f}, Volatility: {volatility:.2f}, Sharpe Ratio: {sharpe_ratio:.2f}")
     long_only_performance = {
         'cagr': CAGR,
@@ -20,7 +20,7 @@ def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1):
         'sharpe_ratio': sharpe_ratio
     }
     # Calculate performance metrics for Long-Short portfolio
-    CAGR, volatility, sharpe_ratio = performance_metrics(long_short.mean(axis=1))
+    CAGR, volatility, sharpe_ratio = performance_metrics(long_short)
     print(f"Cross-Sectional Long-Short:\nCAGR: {CAGR:.2f}, Volatility: {volatility:.2f}, Sharpe Ratio: {sharpe_ratio:.2f}")
     long_short_performance = {
         'cagr': CAGR,
@@ -33,10 +33,10 @@ def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1):
         'quantile': quantile
     }
     # Plot cumulative return and drawdown for cross-sectional Long-Only portfolio
-    plot_cumulative_return_and_drawdown(long_only.mean(axis=1), title='Cross-Sectional Long-Only', **long_only_performance, **kwargs)
+    plot_cumulative_return_and_drawdown(long_only, title='Cross-Sectional Long-Only', **long_only_performance, **kwargs)
 
     # Plot cumulative return and drawdown for cross-sectional Long-Short portfolio
-    plot_cumulative_return_and_drawdown(long_short.mean(axis=1), title='Cross-Sectional Long-Short', **long_short_performance, **kwargs)
+    plot_cumulative_return_and_drawdown(long_short, title='Cross-Sectional Long-Short', **long_short_performance, **kwargs)
 
 
 def plot_time_series_momentum(df, window_size=252):
@@ -44,7 +44,7 @@ def plot_time_series_momentum(df, window_size=252):
     long_only, long_short = time_series_momentum(df, window_size=window_size)
 
     # Calculate performance metrics for Long-Only time-series momentum portfolio
-    CAGR, volatility, sharpe_ratio = performance_metrics(long_only.mean(axis=1))
+    CAGR, volatility, sharpe_ratio = performance_metrics(long_only)
     print(f"Time-Series Long-Only:\nCAGR: {CAGR:.2f}, Volatility: {volatility:.2f}, Sharpe Ratio: {sharpe_ratio:.2f}")
     long_only_performance = {
         'cagr': CAGR,
@@ -53,7 +53,7 @@ def plot_time_series_momentum(df, window_size=252):
     }
 
     # Calculate performance metrics for Long-Short time-series momentum portfolio
-    CAGR, volatility, sharpe_ratio = performance_metrics(long_short.mean(axis=1))
+    CAGR, volatility, sharpe_ratio = performance_metrics(long_short)
     print(f"Time-Series Long-Short:\nCAGR: {CAGR:.2f}, Volatility: {volatility:.2f}, Sharpe Ratio: {sharpe_ratio:.2f}")
     long_short_performance = {
         'cagr': CAGR,
@@ -65,10 +65,10 @@ def plot_time_series_momentum(df, window_size=252):
         'window_size': window_size,
     }
     # Plot cumulative return and drawdown for time-series Long-Only portfolio
-    plot_cumulative_return_and_drawdown(long_only.mean(axis=1), title='Time-Series Long-Only', **long_only_performance, **kwargs)
+    plot_cumulative_return_and_drawdown(long_only, title='Time-Series Long-Only', **long_only_performance, **kwargs)
 
     # Plot cumulative return and drawdown for time-series Long-Short portfolio
-    plot_cumulative_return_and_drawdown(long_short.mean(axis=1), title='Time-Series Long-Short', **long_short_performance, **kwargs)
+    plot_cumulative_return_and_drawdown(long_short, title='Time-Series Long-Short', **long_short_performance, **kwargs)
 
 
 if __name__ == '__main__':
