@@ -40,9 +40,9 @@ def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1, rebalancing
     plot_cumulative_return_and_drawdown(long_short, title='Cross-Sectional Long-Short', **long_short_performance, **kwargs)
 
 
-def plot_time_series_momentum(df, window_size=252):
+def plot_time_series_momentum(df, window_size=252, rebalancing_period=30):
     # Calculate Long-Only and Long-Short portfolios using time-series momentum
-    long_only, long_short = time_series_momentum(df, window_size=window_size)
+    long_only, long_short = time_series_momentum(df, window_size=window_size, rebalancing_period=rebalancing_period)
 
     # Calculate performance metrics for Long-Only time-series momentum portfolio
     CAGR, volatility, sharpe_ratio = performance_metrics(long_only)
@@ -64,6 +64,7 @@ def plot_time_series_momentum(df, window_size=252):
 
     kwargs = {
         'window_size': window_size,
+        'rebalancing_period': rebalancing_period,
     }
     # Plot cumulative return and drawdown for time-series Long-Only portfolio
     plot_cumulative_return_and_drawdown(long_only, title='Time-Series Long-Only', **long_only_performance, **kwargs)
@@ -84,8 +85,8 @@ if __name__ == '__main__':
     df = json_to_df(args.input_file)
 
     if args.momentum_type == 'cross_sectional':
-        plot_cross_sectional_momentum(df, window_size=args.window_size, quantile=args.quantile)
+        plot_cross_sectional_momentum(df, window_size=args.window_size, quantile=args.quantile, rebalancing_period=args.rebalancing_period)
     elif args.momentum_type == 'time_series':
-        plot_time_series_momentum(df, window_size=args.window_size)
+        plot_time_series_momentum(df, window_size=args.window_size, rebalancing_period=args.rebalancing_period)
     else:
         raise ValueError(f"Invalid momentum type: {args.momentum_type}")
