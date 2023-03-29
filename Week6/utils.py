@@ -51,11 +51,11 @@ def plot_cumulative_return_and_drawdown(returns, title, **kwargs):
     fig.suptitle(title, fontsize=16, y=0.98)
     fig.text(0.5, 0.92, f'CAGR: {kwargs.get("cagr"):.2f} Volatility: {kwargs.get("volatility"):.2f} Sharpe Ratio: {kwargs.get("sharpe_ratio"):.2f}', ha='center', fontsize=12)
 
-    ax1.plot(cumulative_returns, label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}')
+    ax1.plot(cumulative_returns, label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}, Rebalancing Period: {kwargs.get("rebalancing_period")}')
     ax1.set(ylabel='Cumulative Return')
     ax1.legend()
 
-    ax2.plot(drawdown, label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}')
+    ax2.plot(drawdown, label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}, Rebalancing Period: {kwargs.get("rebalancing_period")}')
     ax2.set(xlabel='Date', ylabel='Drawdown')
     ax2.set_ylim((-1, 0))
     ax2.legend()
