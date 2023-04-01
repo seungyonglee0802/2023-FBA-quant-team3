@@ -21,9 +21,9 @@ def find_best_parameters(df, momentum_type, trade_type, window_sizes, quantiles)
             raise ValueError(f"Invalid momentum type: {momentum_type}")
         
         if trade_type == 'long_only':
-            _, _, sharpe_ratio = performance_metrics(long_only.mean(axis=1))
+            _, _, sharpe_ratio = performance_metrics(long_only)
         elif trade_type == 'long_short':
-            _, _, sharpe_ratio = performance_metrics(long_short.mean(axis=1))
+            _, _, sharpe_ratio = performance_metrics(long_short)
 
         sharpe_ratios[(window_size, quantile)] = sharpe_ratio
 
@@ -37,10 +37,10 @@ def find_best_parameters(df, momentum_type, trade_type, window_sizes, quantiles)
     return sharpe_ratios
 
 df = json_to_df('Week6/fai_close_data.json')
-window_sizes=[15, 31, 63, 126]
-quantiles=[0.1, 0.2, 0.3, 0.4]
+window_sizes=[63, 126, 189, 252, 315, 378, 441, 504]
+quantiles=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
-sharpe_ratios = find_best_parameters(df, trade_type='long_short', momentum_type='cross_sectional', window_sizes=window_sizes, quantiles=quantiles)
+sharpe_ratios = find_best_parameters(df, trade_type='long_only', momentum_type='cross_sectional', window_sizes=window_sizes, quantiles=quantiles)
 
 # Plot the results as a heatmap
 sharpe_ratio_grid = np.zeros((len(window_sizes), len(quantiles)))
