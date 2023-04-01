@@ -81,16 +81,20 @@ Strategy performance can be optimized by varying the following parameters:
 1. **Cross-Sectional Long Only**:
 
 (rebalancing_period = 21)
+
 ![Cross-Sectional Long Only](figures/CSLO_optimize.png)
 
 (quantile = 0.1)
+
 ![Cross-Sectional Long Only](figures/CSLO_optimize2.png)
 
 
 2. **Cross-Sectional Long-Short**:
 
 (rebalancing_period = 21)
+
 ![Cross-Sectional Long-Short](figures/CSLS_optimize.png)
 
 (quantile = 0.1)
+
 ![Cross-Sectional Long Only](figures/CSLS_optimize2.png)
