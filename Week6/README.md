@@ -18,7 +18,7 @@ pip install pandas numpy matplotlib
 2. Run the main script with the desired arguments:
 
 ```bash
-python main.py --input_file path/to/your/input_file --momentum_type cross_sectional --window_size 252 --quantile 0.1
+python main.py --input_file path/to/your/input_file --momentum_type cross_sectional --window_size 252  --rebalancing_period 21 --quantile 0.1
 ```
 The following arguments are available:
 
@@ -27,6 +27,8 @@ The following arguments are available:
 `--momentum_type`: Choose between 'cross_sectional' and 'time_series' momentum strategies.
 
 `--window_size`: Lookback window size for momentum calculation (default: 252).
+
+`--rebalancing_period`: Rebalancing period for the cross-sectional strategy (default: 21).
 
 `--quantile`: Quantile for the cross-sectional strategy (default: 0.1). This argument is only applicable for the cross-sectional momentum strategy.
 
@@ -48,7 +50,7 @@ Evaluates a stock's performance based on its own past returns over a certain loo
 Takes a long position when the historical price trend is positive (e.g., when the moving average of past returns is positive) and a short position when the historical price trend is negative.
 Aims to profit from the continuation of a stock's own price trend.
 
-## Figures (OutDated)
+## Figures
 
 The repository generates four figures to visualize the performance of each strategy:
 
@@ -67,3 +69,19 @@ The repository generates four figures to visualize the performance of each strat
 4. **Time-Series Long-Short**: Shows the cumulative return and drawdown of the long-short time-series momentum strategy.
 
 ![Time-Series Long-Short](figures/TSLS.png)
+
+## Optimization
+
+Strategy performance can be optimized by varying the following parameters:
+
+* `window_size`: Lookback window size for momentum calculation.
+* `quantile`: Quantile for the cross-sectional strategy.
+* `rebalancing_period`: Rebalancing period for the cross-sectional strategy.
+
+1. **Cross-Sectional Long Only**: (rebalancing_period = 21)
+
+![Cross-Sectional Long Only](figures/CSLO_optimize.png)
+
+2. **Cross-Sectional Long-Short**: (rebalancing_period = 21)
+
+![Cross-Sectional Long-Short](figures/CSLS_optimize.png)
