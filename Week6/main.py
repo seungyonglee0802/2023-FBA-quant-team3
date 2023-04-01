@@ -7,7 +7,7 @@ from momentum import cross_sectional_momentum, time_series_momentum
 from utils import json_to_df, performance_metrics, plot_cumulative_return_and_drawdown
 
 
-def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1, rebalancing_period=30):
+def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1, rebalancing_period=21):
     # Calculate Long-Only and Long-Short portfolios using cross-sectional momentum
     long_only, long_short = cross_sectional_momentum(df, window_size=window_size, quantile=quantile, rebalancing_period=rebalancing_period)
 
@@ -40,7 +40,7 @@ def plot_cross_sectional_momentum(df, window_size=252, quantile=0.1, rebalancing
     plot_cumulative_return_and_drawdown(long_short, title='Cross-Sectional Long-Short', **long_short_performance, **kwargs)
 
 
-def plot_time_series_momentum(df, window_size=252, rebalancing_period=30):
+def plot_time_series_momentum(df, window_size=252, rebalancing_period=21):
     # Calculate Long-Only and Long-Short portfolios using time-series momentum
     long_only, long_short = time_series_momentum(df, window_size=window_size, rebalancing_period=rebalancing_period)
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--momentum_type', type=str, default='cross_sectional')
     parser.add_argument('--window_size', type=int, default=252)
     parser.add_argument('--quantile', type=float, default=0.1)
-    parser.add_argument('--rebalancing_period', type=int, default=30)
+    parser.add_argument('--rebalancing_period', type=int, default=21)
     args = parser.parse_args()
 
     df = json_to_df(args.input_file)
