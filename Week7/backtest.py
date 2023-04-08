@@ -32,4 +32,5 @@ def backtest_daily(close_df, signal_dict):
                 positive_signal * returns.loc[date, :]
             ).sum() + (negative_signal * (1 / (1 + returns.loc[date, :]) - 1)).sum()
 
+    strategy_returns.index = pd.to_datetime(strategy_returns.index)
     return strategy_returns
