@@ -51,6 +51,7 @@ def plot_time_series_momentum(
     plot_cumulative_return_and_drawdown(
         strategy_returns,
         "Time-series Momentum Long Only Strategy",
+        list(long_only_signal.keys()),
         window_size=window_size,
         rebalancing_period=rebalancing_period,
     )
@@ -59,6 +60,7 @@ def plot_time_series_momentum(
     plot_cumulative_return_and_drawdown(
         strategy_returns,
         "Time-series Momentum Long Short Strategy",
+        list(long_short_signal.keys()),
         window_size=window_size,
         rebalancing_period=rebalancing_period,
     )
