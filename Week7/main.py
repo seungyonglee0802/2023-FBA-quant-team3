@@ -1,8 +1,8 @@
-import pandas as pd
 import argparse
 from momentum import cross_sectional_momentum, time_series_momentum
 from backtest import backtest_daily
 from utils import plot_cumulative_return_and_drawdown
+from data_loader import load_close
 
 
 def plot_cross_sectional_momentum(
@@ -21,6 +21,7 @@ def plot_cross_sectional_momentum(
     plot_cumulative_return_and_drawdown(
         strategy_returns,
         "Cross-sectional Momentum Long Only Strategy",
+        list(long_only_signal.keys()),
         window_size=window_size,
         quantile=quantile,
         rebalancing_period=rebalancing_period,
@@ -30,6 +31,7 @@ def plot_cross_sectional_momentum(
     plot_cumulative_return_and_drawdown(
         strategy_returns,
         "Cross-sectional Momentum Long Short Strategy",
+        list(long_short_signal.keys()),
         window_size=window_size,
         quantile=quantile,
         rebalancing_period=rebalancing_period,
@@ -70,14 +72,7 @@ if __name__ == "__main__":
     parser.add_argument("-RE", "--rebalancing_period", type=int, default=21)
     args = parser.parse_args()
 
-    # Read the 'clean_ohlcv.csv' file
-    clean_ohlcv_df = pd.read_csv("Week7/clean_ohlcv.csv", index_col=0, header=[0, 1])
-
-    # Select the 'CLOSE' column by its position
-    close_df = clean_ohlcv_df.iloc[
-        :, clean_ohlcv_df.columns.get_level_values(1) == "CLOSE"
-    ]
-    close_df.columns = close_df.columns.droplevel(1)
+    close_df = load_close()
 
     if args.momentum_type == "cross_sectional":
         plot_cross_sectional_momentum(

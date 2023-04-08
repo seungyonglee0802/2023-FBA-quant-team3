@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
@@ -19,7 +20,7 @@ def get_drawdown(returns):
     return drawdown
 
 
-def plot_cumulative_return_and_drawdown(returns, title, **kwargs):
+def plot_cumulative_return_and_drawdown(returns, title, rebalancing_dates, **kwargs):
     CAGR, volatility, sharpe_ratio = performance_metrics(returns)
     drawdown = get_drawdown(returns)
     cumulative_returns = (1 + returns).cumprod()
@@ -42,6 +43,19 @@ def plot_cumulative_return_and_drawdown(returns, title, **kwargs):
     )
     ax1.set(ylabel="Cumulative Return")
     ax1.legend()
+
+    rebalancing_dates = pd.to_datetime(rebalancing_dates, format="%Y-%m-%d")
+    # add arrow at the rebalancing dates
+    for date in rebalancing_dates:
+        ax1.annotate(
+            "",
+            xy=(date, cumulative_returns.loc[date]),
+            xytext=(0, -5),
+            textcoords="offset points",
+            ha="center",
+            va="bottom",
+            arrowprops=dict(arrowstyle="->", color="grey"),
+        )
 
     ax2.plot(
         drawdown,
