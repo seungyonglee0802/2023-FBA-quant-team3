@@ -68,7 +68,13 @@ def plot_time_series_momentum(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-M", "--momentum_type", type=str, default="cross_sectional")
+    parser.add_argument(
+        "-M",
+        "--momentum_type",
+        type=str,
+        default="cross_sectional",
+        choices=["cross_sectional", "time_series"],
+    )
     parser.add_argument("-W", "--window_size", type=int, default=252)
     parser.add_argument("-Q", "--quantile", type=float, default=0.1)
     parser.add_argument("-RE", "--rebalancing_period", type=int, default=21)
