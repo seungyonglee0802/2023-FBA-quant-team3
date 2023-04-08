@@ -7,4 +7,3 @@ repos:
   rev: 6.0.0
   hooks:
   - id: flake8
-  max-line-length: 90
