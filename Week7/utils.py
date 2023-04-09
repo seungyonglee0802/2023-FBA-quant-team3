@@ -20,10 +20,17 @@ def get_drawdown(returns):
     return drawdown
 
 
-def plot_cumulative_return_and_drawdown(returns, title, rebalancing_dates, **kwargs):
+def plot_cumulative_return_and_drawdown(
+    returns, benchmark_returns, title, rebalancing_dates, **kwargs
+):
+    assert (
+        returns.index[0] == benchmark_returns.index[0]
+        and returns.index[-1] == benchmark_returns.index[-1]
+    )
     CAGR, volatility, sharpe_ratio = performance_metrics(returns)
     drawdown = get_drawdown(returns)
     cumulative_returns = (1 + returns).cumprod()
+    benchmark_cumulative_returns = (1 + benchmark_returns).cumprod()
 
     fig, (ax1, ax2) = plt.subplots(
         2, 1, sharex=True, figsize=(10, 8), gridspec_kw={"height_ratios": [8, 2]}
@@ -41,6 +48,9 @@ def plot_cumulative_return_and_drawdown(returns, title, rebalancing_dates, **kwa
         cumulative_returns,
         label=f'Window Size: {kwargs.get("window_size")}, Quantile: {kwargs.get("quantile")}, Rebalancing Period: {kwargs.get("rebalancing_period")}',
     )
+
+    ax1.plot(benchmark_cumulative_returns, "--", label="KOSPI")
+
     ax1.set(ylabel="Cumulative Return")
     ax1.legend()
 

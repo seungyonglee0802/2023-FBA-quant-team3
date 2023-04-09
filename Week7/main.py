@@ -17,9 +17,10 @@ def plot_cross_sectional_momentum(
     )
 
     # backtest and plot
-    strategy_returns = backtest_daily(close_df, long_only_signal)
+    strategy_returns, benchmark_returns = backtest_daily(close_df, long_only_signal)
     plot_cumulative_return_and_drawdown(
         strategy_returns,
+        benchmark_returns,
         "Cross-sectional Momentum Long Only Strategy",
         list(long_only_signal.keys()),
         window_size=window_size,
@@ -27,9 +28,10 @@ def plot_cross_sectional_momentum(
         rebalancing_period=rebalancing_period,
     )
 
-    strategy_returns = backtest_daily(close_df, long_short_signal)
+    strategy_returns, benchmark_returns = backtest_daily(close_df, long_short_signal)
     plot_cumulative_return_and_drawdown(
         strategy_returns,
+        benchmark_returns,
         "Cross-sectional Momentum Long Short Strategy",
         list(long_short_signal.keys()),
         window_size=window_size,
