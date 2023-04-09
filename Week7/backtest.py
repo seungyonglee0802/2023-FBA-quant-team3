@@ -6,12 +6,14 @@ def backtest_daily(close_df, signal_dict):
     """
     Backtest a strategy using daily signals.
     """
+    num_universe = len(close_df.columns)
     returns = close_df.pct_change(fill_method=None).shift(-1)
     strategy_returns = pd.Series(np.nan, index=returns.index)
     signal = None
     for date, row in returns.iterrows():
         if date in signal_dict.keys():
             signal = signal_dict[date]
+            assert len(signal) == num_universe
             # normalize signal by absolute value
             signal = signal / np.abs(signal).sum()
         if signal is None:
