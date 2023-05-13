@@ -1,0 +1,30 @@
+Sentiment score for 'Tesla to recall 1.1 million cars in China over potential safety risks, Chinese regulator says': NLTK 58.894999999999996, GPT 0
+Sentiment score for 'China Orders Tesla to Recall 1.1 Million Vehicles Over Braking Risks': NLTK 36.34, GPT 0
+Sentiment score for 'China says Tesla to fix software for 1.1 mln cars on braking issue': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla owners sue over impact of software update on EV batteries': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla raises US prices for all its vehicles except Model 3': NLTK 50.0, GPT 100
+Sentiment score for 'New Twitter CEO may free up Musk to steer Tesla through easing ...': NLTK 82.43, GPT 100
+Sentiment score for 'Soros Fund Management cut Tesla stake, added Netflix in 1st quarter': NLTK 36.34, GPT 0
+Sentiment score for 'Stocks making the biggest moves in the premarket: Tesla, JD.com, Fox & more': NLTK 50.0, GPT 100
+Sentiment score for 'EV startups will have to 'race to catch Tesla' in maturing EV market ...': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla recalls 1.1M cars in China over safety concerns': NLTK 71.075, GPT 0
+Sentiment score for 'Tesla relaunches referral program for cars, raffles a Cybertruck': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla Breaks Ground on Lithium Processing Center in Texas': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla cancels all right-hand drive Model S, Model X orders': NLTK 38.685, GPT 0
+Sentiment score for 'The Executive Who Keeps Tesla Rolling Isn't Elon Musk': NLTK 50.0, GPT 50
+Sentiment score for 'Podcast: Tesla Model 3 refresh, Cybertruck, EV startup earnings ...': NLTK 50.0, GPT 100
+Sentiment score for 'First Tesla Model 3 Highland facelift interior snapshot reveals ...': NLTK 50.0, GPT 100
+Sentiment score for 'Tesla Inc. stock falls Friday, underperforms market': NLTK 50.0, GPT 0
+Sentiment score for 'Tesla Shouldn't Call Driving System Autopilot, Buttigieg says': NLTK 50.0, GPT 0
+Sentiment score for 'Tesla Model 3 Long Range Once Again Available to Order in Canada': NLTK 50.0, GPT 100
+Sentiment score for 'BYD to take on Tesla's Autopilot with new driver-assist software ...': NLTK 50.0, GPT 50
+Sentiment score for 'Tesla, Rivian, Lucid snatch $910 million from traditional dealers in California': NLTK 50.0, GPT 100
+Sentiment score for 'Ford CEO Jim Farley Takes on Elon Musk’s Tesla': NLTK 50.0, GPT 50
+Sentiment score for ''Nightmare': Woman demands refund after sixth attempt to fix ...': NLTK 50.0, GPT 0
+Sentiment score for 'Tesla FSD Beta 11.4.1 Rolls Out to Public Testers: Here's What to ...': NLTK 50.0, GPT 100
+Sentiment score for 'Will self-driving vehicles send Tesla shares into hyperdrive?': NLTK 64.8, GPT 50
+Sentiment score for 'Panasonic delays production of new Tesla battery to improve ...': NLTK 72.02, GPT 50
+Sentiment score for 'Will Tesla's Price War Accelerate EV Adoption?': NLTK 20.029999999999998, GPT 50
+Sentiment score for 'Killing machines! Legendary Apple cofounder says AI in Elon Musk's Tesla cars can KILL people': NLTK 4.865000000000003, GPT 0
+Sentiment score for 'Tesla hikes prices in U.S., China and other markets after multiple cuts': NLTK 35.199999999999996, GPT 0
+Sentiment score for 'Chinese electric car makers suffer as Elon Musk doubles down on Tesla price war': NLTK 9.370000000000001, GPT 100
