@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "OPENAI_API_KEY"
 
 
 def get_sentiment_score_gpt(company, headline, term):
