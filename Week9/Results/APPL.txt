@@ -1,0 +1,31 @@
+Sentiment score for 'TECH-HEAVY: Big Disney data to drop; Why the APPL never falls far from the Buffett': NLTK 36.34, GPT 100
+Sentiment score for 'Local Event: SF Performances Presents Benjamin Appl, baritone with James Baillieu, piano': NLTK 50.00, GPT 100
+Sentiment score for 'Classical: For Benjamin Appl, mixing things up allows him to experiment': NLTK 50.00, GPT 50
+Sentiment score for 'Apple Inc. (APPL stock) - Can Fed Decision Hurt Price?': NLTK 23.67, GPT 50
+Sentiment score for 'Q4 outlook for Apple stock (APPL) – what to expect?': NLTK 50.00, GPT 50
+Sentiment score for 'Lise Davidsen, Benjamin Appl, Magdalena Kožená & Regula Mühlemann Lead Wigmore Hall's 2023-24 Season ...': NLTK 50.00, GPT 50
+Sentiment score for 'Dale Eugene Appl, Leoti': NLTK 50.00, GPT 50
+Sentiment score for 'Classical: For Benjamin Appl, mixing things up allows him to experiment': NLTK 50.00, GPT 50
+Sentiment score for 'Elon Musk sees Tesla ($TSLA) becoming worth more than Apple ($APPL) and Saudi Aramco combined': NLTK 61.31, GPT 100
+Sentiment score for 'Dale Appl Obituary (1932 - 2023)': NLTK 50.00, GPT 0
+Sentiment score for 'How to invest when the dollar is weak': NLTK 27.98, GPT 100
+Sentiment score for 'NDC accuses NPP of pushing Duffuor injunction application': NLTK 33.00, GPT 0
+Sentiment score for 'Q4 outlook for Apple stock (APPL) – what to expect?': NLTK 50.00, GPT 50
+Sentiment score for 'Apple Inc. (APPL stock) - Can Fed Decision Hurt Price?': NLTK 23.67, GPT 50
+Sentiment score for 'Wall Street Slips as Energy & Bank Stocks Weigh': NLTK 63.66, GPT 0
+Sentiment score for 'The quantitative investigation of spark plasma on skin parameters ...': NLTK 61.31, GPT 50
+Sentiment score for 'Apple to Keep Qualcomm Chips in 2023 in Turnabout (APPL, QCOM)': NLTK 50.00, GPT 100
+Sentiment score for 'Kathryn Appl | Obituary | The Norman Transcript': NLTK 50.00, GPT 0
+Sentiment score for 'Chamonix. Récital de Benjamin Appl': NLTK 50.00, GPT 50
+Sentiment score for 'Whole spectrum of Aeromonas hydrophila virulence determinants ...': NLTK 50.00, GPT 50
+Sentiment score for 'Lise Davidsen, Benjamin Appl, Magdalena Kožená & Regula ...': NLTK 50.00, GPT 50
+Sentiment score for 'Evaluation of microbial communities of Chinese Feng-flavor Daqu ...': NLTK 50.00, GPT 50
+Sentiment score for 'APPL, AMZN, SHOP, MSFT: Here’s Why All Tech Stocks Are Rallying': NLTK 50.00, GPT 100
+Sentiment score for 'The Risks, Harms, and Science of Sugar and Endurance Athletes': NLTK 17.57, GPT 50
+Sentiment score for 'Benjamin Appl, Xabier Anduaga, Sarah Blanch Headline Barcelona ...': NLTK 50.00, GPT 50
+Sentiment score for 'Effect of basal metabolic rate on lifespan: a sex-specific Mendelian ...': NLTK 50.00, GPT 50
+Sentiment score for 'Elon Musk sees Tesla ($TSLA) becoming worth more than Apple ($APPL) and Saudi Aramco combined': NLTK 61.31, GPT 50
+Sentiment score for 'Benjamin Appl Embarks on North American Tour - OperaWire ...': NLTK 50.00, GPT 50
+Sentiment score for 'Apple, Nvidia in the news: Here's our take on these outsized tech ...': NLTK 50.00, GPT 50
+Sentiment score for 'APPL Stock Remains a Buy After These Product Announcements': NLTK 50.00, GPT 100
+Mean sentiment score: NLTK 46.99, GPT 55.00

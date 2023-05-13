@@ -16,11 +16,12 @@ The project consists of the following files:
 
 1. Install the required dependencies by running `pip install -r requirements.txt`.
 
-2. Run main.py `python main.py --query TESLA --num_pages 3 --plot --gpt`.
+2. Run main.py `python main.py --query TESLA --num_pages 3 --plot --plot_annotate --gpt`.
 
 - The `--query` option specifies the query term for news titles. Replace TESLA with your desired query.
 - The `--num_pages` option specifies the number of pages to scrape for news titles. Adjust the value as needed.
 - The `--plot` option generates a plot of the Word2Vec figure.
+- The `--plot_annotate` option adds annotation on the figure.
 - The `--gpt` option uses ChatGPT for sentiment analysis. Omit this option to not use ChatGPT.
 
 ## Additional Notes

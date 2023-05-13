@@ -1,0 +1,31 @@
+Sentiment score for 'Twitter whipped up financial panic and fueled SVB failure, researchers say': NLTK 11.75, GPT 0
+Sentiment score for 'Deposit outflows after SVB collapse concentrated among 'super ...': NLTK 58.89, GPT 0
+Sentiment score for 'Deposit outflows after SVB collapse took place almost entirely at ...': NLTK 25.30, GPT 0
+Sentiment score for 'Deposit outflows after SVB collapse concentrated among "super-regionals" - NY Fed study': NLTK 25.30, GPT 0
+Sentiment score for 'FDIC to hit biggest US banks with $16bn bill for SVB clean-up': NLTK 50.00, GPT 0
+Sentiment score for 'Q&A with Minh Le, former SVB leader in Seattle, on navigating a ...': NLTK 50.00, GPT 50
+Sentiment score for 'US credit crunch didn't start with SVB collapse, and may not end there': NLTK 42.34, GPT 50
+Sentiment score for 'SVB Financial fights FDIC over seized tax refunds': NLTK 29.91, GPT 50
+Sentiment score for 'Silicon Valley Bank closes $203M solar deal with Pivot Energy in ...': NLTK 63.66, GPT 100
+Sentiment score for 'First Citizens makes huge gain on Silicon Valley Bank deal': NLTK 84.54, GPT 100
+Sentiment score for 'Fate of Silicon Valley Bank's Chinese venture hangs in balance': NLTK 50.00, GPT 50
+Sentiment score for 'Fed autopsy on SVB faults bank's management — and its own oversight': NLTK 26.16, GPT 0
+Sentiment score for 'After SVB, what's next for regional banks? 3 takeaways from MIT Sloan': NLTK 50.00, GPT 50
+Sentiment score for '6 strategies revealed in FDIC's disclosure of SVB bids': NLTK 50.00, GPT 50
+Sentiment score for 'California DFPI Announces Results from Review of the Supervision ...': NLTK 50.00, GPT 50
+Sentiment score for 'LIVE: Former top execs of failed SVB and Signature Bank testify at ...': NLTK 31.94, GPT 50
+Sentiment score for 'Fed's Bowman calls for external review of Silicon Valley Bank ...': NLTK 50.00, GPT 50
+Sentiment score for 'The Pain of Silicon Valley Bank's Collapse Is Being Felt by These ...': NLTK 12.10, GPT 0
+Sentiment score for 'The RBI Has a Lot to Learn From US Fed Review of SVB Collapse': NLTK 25.30, GPT 100
+Sentiment score for 'US authorities probe Goldman Sachs' role in SVB collapse': NLTK 25.30, GPT 0
+Sentiment score for ''Utterly irresponsible': SVB failure was caused by a banking — not tech — crisis, top VC says': NLTK 39.14, GPT 0
+Sentiment score for 'Silicon Valley Bank: HSBC £1 deal to buy collapsed bank to boost profit': NLTK 77.11, GPT 100
+Sentiment score for 'Silicon Valley Bank: the multiple warnings that were missed': NLTK 23.67, GPT 50
+Sentiment score for 'Regulators Stiffed Low-Income Communities In SVB Bailout': NLTK 44.87, GPT 100
+Sentiment score for 'BankUnited lost its bid for SVB, but it still got a talent boost': NLTK 88.25, GPT 0
+Sentiment score for 'SVB's new owner fights to rebuild brand and stem outflows': NLTK 29.91, GPT 100
+Sentiment score for 'Federal Reserve will consider tougher rules for banks after Silicon ...': NLTK 58.89, GPT 50
+Sentiment score for 'SVB discussed selling up to $20bn in bonds months before bank run': NLTK 50.00, GPT 100
+Sentiment score for 'Fed Official Balks At 'Radical Reform' Of Bank Rules After SVB': NLTK 50.00, GPT 0
+Sentiment score for 'SVB Financial Group: CEO Greg Becker and CFO Daniel Beck have resigned': NLTK 37.50, GPT 0
+Mean sentiment score: NLTK 43.73, GPT 41.67

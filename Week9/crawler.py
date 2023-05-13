@@ -6,7 +6,7 @@ def extract_news_titles(query, num_pages):
     titles = []
 
     for page in range(num_pages):
-        url = f"https://www.google.com/search?q={query}&tbm=nws&start={page*10}&hl=en"
+        url = f"https://www.google.com/search?gl=us&q={query}&tbm=nws&start={page*10}&hl=en"
 
         # Send a GET request to the URL
         response = requests.get(url)
