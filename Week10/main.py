@@ -4,7 +4,12 @@ import torch
 from tqdm import tqdm
 
 from dataloader import get_dataloader
-from util import get_data, get_normalized_data, split_trn_eval, calculate_accuracy
+from util import (
+    get_data,
+    get_normalized_KOSPI,
+    get_normalized_data,
+    split_trn_eval,
+)
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")  # macbook
 
@@ -49,12 +54,12 @@ def forcast(model, train_data, seq_len, future_day, minmax):
         out_logits = model(
             torch.Tensor(train_data[k : k + seq_len]).unsqueeze(0).to(device)
         )
-        output_predict[k + seq_len] = out_logits.detach().numpy()
+        output_predict[k + seq_len] = out_logits.detach().cpu().numpy()
 
     for i in range(future_day):
         o = output_predict[-future_day - seq_len + i : -future_day + i]
         out_logits = model(torch.Tensor(o).unsqueeze(0).to(device))
-        output_predict[-future_day + i] = out_logits.detach().numpy()
+        output_predict[-future_day + i] = out_logits.detach().cpu().numpy()
 
     unnormalized_output_predict = minmax.inverse_transform(output_predict)
 
@@ -91,13 +96,17 @@ def main(model, args):
     future_day = args.future_day
 
     # Data
-    df = get_data(args.data_path)
-    normalized_adj_close, unnomalized_adj_close, minmax = get_normalized_data(
-        df, 1
+    df_kospi = get_data("dataset/pp_kospi.csv")
+    normalized_kospi, kospi, minmax = get_normalized_KOSPI(
+        df_kospi, 1
     )  # Adj Close in column 1
-    trn_data, evl_data = split_trn_eval(normalized_adj_close, 0.9)
-    trn_loader = get_dataloader(trn_data, seq_len, batch_size)
-    evl_loader = get_dataloader(evl_data, seq_len, batch_size=1, shuffle=False)
+    trn_kospi, evl_kospi = split_trn_eval(normalized_kospi, 0.9)
+
+    df = get_data("dataset/clean_adj_close.csv")
+    normalized_data = get_normalized_data(df)
+    trn_loader = get_dataloader(
+        np.expand_dims(normalized_data, axis=2), seq_len, batch_size
+    )
 
     # Model
     # model = LSTM(input_dim=1, hidden_dim=hidden_dim, num_layers=num_layers, output_dim=1).to(device)
@@ -108,14 +117,12 @@ def main(model, args):
     train(epochs, model, trn_loader, criterion, optimizer)
 
     # Evaluate
-    preds, labels = eval(model, evl_loader)
-    print(f"Accuracy: {calculate_accuracy(labels, preds):.2f}")
+    # preds, labels = eval(model, evl_loader)
+    # print(f"Accuracy: {calculate_accuracy(labels, preds):.2f}")
 
     # Forcast
-    unnormalized_output_predict = forcast(model, trn_data, seq_len, future_day, minmax)
-    plot_prediction(
-        unnomalized_adj_close, unnormalized_output_predict, trn_size=len(trn_data)
-    )
+    unnormalized_output_predict = forcast(model, trn_kospi, seq_len, future_day, minmax)
+    plot_prediction(kospi, unnormalized_output_predict, trn_size=len(trn_kospi))
 
 
 if __name__ == "__main__":

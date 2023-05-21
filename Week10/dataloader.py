@@ -1,4 +1,4 @@
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, ConcatDataset, DataLoader
 
 
 class StockDataset(Dataset):
@@ -14,6 +14,8 @@ class StockDataset(Dataset):
 
 
 def get_dataloader(data, seq_len, batch_size, shuffle=True):
-    dataset = StockDataset(data, seq_len)
+    num_stocks = data.shape[0]
+    datasets = [StockDataset(data[i], seq_len) for i in range(num_stocks)]
+    dataset = ConcatDataset(datasets)
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
     return dataloader
